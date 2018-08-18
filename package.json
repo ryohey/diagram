@@ -1,22 +1,24 @@
 {
-  "name": "pixelmachine",
+  "name": "diagram",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start --server --files \"*.js,*.css,index.html\"",
     "compile": "browserify -t coffeeify coffee/main.coffee > main.js",
-    "watch": "nodemon --watch coffee/*.coffee --ext coffee --exec \"npm run compile\""
+    "watch": "nodemon --watch coffee/*.coffee --ext coffee --exec \"npm run compile\"",
+    "deploy": "npm run compile && shx rm -rf docs && shx mkdir docs && shx cp -r js docs/js && shx cp main.js docs/ && shx cp index.html docs/ && shx cp style.css docs/"
   },
   "author": "ryohey",
   "license": "MIT",
   "dependencies": {
-    "node-static": "^0.7.7"
   },
   "devDependencies": {
     "browser-sync": "^2.10.1",
-    "browserify": "^12.0.1",
-    "coffeeify": "^2.0.1",
-    "nodemon": "^1.8.1"
+    "browserify": "^16.2.2",
+    "coffeeify": "^3.0.1",
+    "coffeescript": "^2.3.1",
+    "nodemon": "^1.8.1",
+    "shx": "^0.3.2"
   }
 }
