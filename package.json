@@ -1,0 +1,22 @@
+{
+  "name": "pixelmachine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"*.js,*.css,index.html\"",
+    "compile": "browserify -t coffeeify coffee/main.coffee > main.js",
+    "watch": "nodemon --watch coffee/*.coffee --ext coffee --exec \"npm run compile\""
+  },
+  "author": "ryohey",
+  "license": "MIT",
+  "dependencies": {
+    "node-static": "^0.7.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "browserify": "^12.0.1",
+    "coffeeify": "^2.0.1",
+    "nodemon": "^1.8.1"
+  }
+}
