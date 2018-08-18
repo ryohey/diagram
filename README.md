@@ -1,5 +1,7 @@
 # Diagram
 
+![diagram](https://user-images.githubusercontent.com/5355966/44295135-08dde780-a2de-11e8-9f0f-83cff3fbbabb.png)
+
 ## Syntax
 
 `label <input[]> > output`
